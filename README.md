@@ -24,7 +24,7 @@ TVexScouting is a comprehensive solution for scouting teams participating in VEX
 
 To get started with TVexScouting, follow these steps:
 
-1. Clone the repository:
+1. Clone the repository(Or use Git Desktop):
 
     ```bash
     git clone https://github.com/your-username/TVexScouting.git
@@ -34,27 +34,32 @@ To get started with TVexScouting, follow these steps:
 
     ```bash
     cd TVexScouting
-    # Add instructions for installing dependencies, if any
+    # None yet, this will change!
     ```
 
 3. Run the application:
 
     ```bash
-    # Add instructions for running the application
+    # No Instructions Yet
     ```
 
 4. Begin scouting and contributing!
 
-For detailed information on setup and usage, refer to the [documentation](docs/).
+For detailed information on setup and usage, refer to the documentation yet to come.
 
 ## Contributing
 
-We welcome contributions from the community! If you'd like to contribute to TVexScouting, please review our [contribution guidelines](CONTRIBUTING.md) and [code of conduct](CODE_OF_CONDUCT.md).
+We welcome contributions from the community! If you'd like to contribute to TVexScouting, please review our [code of conduct](https://vrc-kb.recf.org/hc/en-us/articles/9653987780375-Code-of-Conduct).
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code in accordance with the terms of the license.
+This project is licensed under "Be a decent person" License. Feel free to use, modify, and distribute the code in accordance with the terms of the license(Vex and REC Foundation Code Of Conduct).
 
 ---
 
 Happy Scouting! 🤖✨
+Owner:
+-Aaron Cherney
+
+Original Contributors:
+-Ian
