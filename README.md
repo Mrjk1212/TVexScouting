@@ -39,11 +39,11 @@ TVexScouting is a comprehensive solution for scouting teams participating in VEX
   ```bash
   Console Command: pip install beautifulsoup4 
   ```
-  - **Requests:** Library for making requests to websites. 
+- **Requests:** Library for making requests to websites. 
   ```bash
   Console Command: pip install requests 
   ```
-  - **Selenium:** Library for interacting with websites, in case we need user input. 
+- **Selenium:** Library for interacting with websites, in case we need user input. 
   ```bash
   Console Command: pip install selenium 
   ```
