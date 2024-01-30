@@ -6,6 +6,7 @@ Welcome to the TVexScouting repository! This repository contains all the code re
 
 - [Overview](#overview)
 - [Features](#features)
+- [Tools](#tools)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
@@ -19,6 +20,36 @@ TVexScouting is a comprehensive solution for scouting teams participating in VEX
 - **Data Collection:** Collect and store valuable match data during competitions.
 - **Analysis Tools:** Utilize built-in tools for analyzing and visualizing scouting data.
 - **Open Source:** Available for teams to use and contribute to, fostering collaboration within the VEX Robotics community.
+
+## Tools
+
+- **Pandas:** Library for document use and management.
+  ```bash
+  Console Command: pip install pandas 
+  ```
+- **Matplotlib:** Library for Graphs and other data representation.
+  ```bash
+  Console Command: pip install matplotlib 
+  ```
+- **Numpy:** Library for math and operations on data.
+  ```bash
+  Console Command: pip install numpy 
+  ```
+- **Beautiful Soup:** Library for pulling data out of HTML and XML files.
+  ```bash
+  Console Command: pip install beautifulsoup4 
+  ```
+  - **Requests:** Library for making requests to websites. 
+  ```bash
+  Console Command: pip install requests 
+  ```
+  - **Selenium:** Library for interacting with websites, in case we need user input. 
+  ```bash
+  Console Command: pip install selenium 
+  ```
+- **VSCode:** This is preffered for the team 62185A/B
+  
+  
 
 ## Getting Started
 
