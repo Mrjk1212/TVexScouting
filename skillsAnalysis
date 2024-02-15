@@ -1,0 +1,88 @@
+import requests # see below comment
+from bs4 import BeautifulSoup # we can use this later
+import pandas as pd
+from pandas import *
+
+# Since This Script Uses A CSV Downloaded From The Skills Standing Website Please Re-Download This Before Every Tournement, It Can Be Found Here:
+#https://www.robotevents.com/robot-competitions/vex-robotics-competition/standings/skills?search=&event_region=Minnesota&country=*&grade_level=High+School
+
+#Column/Feature Names
+#Rank                                           - Overall World Ranking
+#Score                                          - Combined Skills Score
+#Autonomous Coding Skills                       - Score
+#Driver Skills                                  - Score
+#Highest Autonomous Coding Skills               - TimeStamp?????? This is weird yes
+#Highest Driver Skills                          - TimeStamp?????? This is weird yes
+#Highest Autonomous Score Timestamp             - This is the actual Highest Score....
+#Highest Driver Score Timestamp                 - This is the actual Highest Score....
+#Highest Autonomous Score Stop Time             - PR stop time
+#Highest Driver Score Stop Time                 - PR stop time
+#Team Number,Team Name                          - Don't ask me what this is it's too complex
+#Organization                                   - See above
+#Event Region                                   - We only care about MN for now
+#Country / Region                               - Unless we go to worlds this will always be US
+
+def get_teams(data):
+    return data['Team Number']
+
+def get_info_about_team(data, team_number):
+    return data[data['Team Number'] == team_number]
+
+def compare_our_score(data, our_team):
+    our_team_info = data[data['Team Number'] == our_team]
+    our_score = our_team_info['Score'].iloc[0]
+    higher_score_teams = data[data['Score'] > our_score][['Team Number', 'Score']]
+    return higher_score_teams
+
+#TODO Fix the column Name Here?
+def compare_our_auton(data, our_team):
+    our_team_info = data[data['Team Number'] == our_team]
+    our_score = our_team_info['Highest Autonomous Score Timestamp'].iloc[0]
+    higher_score_teams = data[data['Highest Autonomous Score Timestamp'] > our_score][['Team Number', 'Highest Autonomous Score Timestamp']]
+    return higher_score_teams
+
+#TODO Fix the column Name Here
+def compare_our_driver(data, our_team):
+    our_team_info = data[data['Team Number'] == our_team]
+    our_score = our_team_info['Driver Skills'].iloc[0]
+    higher_score_teams = data[data['Driver Skills'] > our_score][['Team Number', 'Driver Skills']]
+    return higher_score_teams
+
+def main():
+    print("welcome to the main function")
+    filepath = "Data/skills-standings.csv"
+
+    #Create the date file object
+    df = pd.read_csv(filepath)
+
+
+    # Get the list of teams
+    teams = get_teams(df)
+    print("Teams:", teams)
+
+    # Get information about a specific team
+    team_number = "62185A"
+    team_info = get_info_about_team(df, team_number)
+    print("Information about team", team_number, ":", team_info)
+
+    # Compare our score with others
+    higher_score_teams = compare_our_score(df, team_number)
+    print("Teams with higher score than ours:")
+    print(higher_score_teams)
+
+    # Compare our AUTON score with others
+    higher_auton_teams = compare_our_auton(df, team_number)
+    print("Teams with higher auton score than ours:")
+    print(higher_auton_teams)
+
+
+    # Compare our DRIVER score with others
+    higher_driver_teams = compare_our_driver(df, team_number)
+    print("Teams with higher driver score than ours:")
+    print(higher_driver_teams)
+
+
+
+
+if __name__=="__main__": 
+    main() 
