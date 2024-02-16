@@ -1,5 +1,5 @@
-import requests # see below comment
-from bs4 import BeautifulSoup # we can use this later
+#import requests # see below comment
+#from bs4 import BeautifulSoup # we can use this later
 import pandas as pd
 from pandas import *
 
@@ -37,16 +37,16 @@ def compare_our_score(data, our_team):
 #TODO Fix the column Name Here?
 def compare_our_auton(data, our_team):
     our_team_info = data[data['Team Number'] == our_team]
-    our_score = our_team_info['Highest Autonomous Score Timestamp'].iloc[0]
-    higher_score_teams = data[data['Highest Autonomous Score Timestamp'] > our_score][['Team Number', 'Highest Autonomous Score Timestamp']]
-    return higher_score_teams
+    our_score = our_team_info['Driver Skills'].iloc[0]
+    higher_score_teams = data[data['Driver Skills'] > 102][['Team Number', 'Driver Skills']]
+    return len(higher_score_teams)
 
 #TODO Fix the column Name Here
 def compare_our_driver(data, our_team):
     our_team_info = data[data['Team Number'] == our_team]
-    our_score = our_team_info['Driver Skills'].iloc[0]
-    higher_score_teams = data[data['Driver Skills'] > our_score][['Team Number', 'Driver Skills']]
-    return higher_score_teams
+    our_score = our_team_info['Autonomous Coding Skills'].iloc[0]
+    higher_score_teams = data[data['Autonomous Coding Skills'] > 135][['Team Number', 'Autonomous Coding Skills']]
+    return len(higher_score_teams)
 
 def main():
     print("welcome to the main function")
